@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    
+        <link href="{{url_for('static', filename='styles/update.css')}}" rel="stylesheet" type="text/css"/>
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="#">Zingo Store</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a></li>
+                   
+                    <li><a href="logout.html"><span class="glyphicon glyphicon-log-in"></span> Logout </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>   
+    <form>
+        <br>
+        <div>
+        <div>
+    <div>
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header clearfix">
+                        <h2 class="pull-left">Product Details</h2>
+                        <a href="/admin" class="btn btn-success pull-right">Add New Product</a>
+                    </div>
+                    
+                            <table class='table table-bordered table-striped'>
+                                <thead>
+                                    <tr>
+                                        <th>PRODUCT ID</th>
+                                        <th>PRODUCT NAME</th>
+                                        <th>main_image</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in data %}
+                                    <tr>
+                                        <td> {{ i[0] }}</td>
+                                        <td>{{ i[1] }}</td>
+                                        <td>{{ i[2] }}</td>
+                                        <td>
+                                            <a href='#' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>
+                                           <!--  <a href='#' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>
+                                           <a href='#deleteEmployeeModal' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>-->
+                                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><span class="glyphicon glyphicon-trash" data-toggle="tooltip" title="Delete"></span></a>
+                                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="glyphicon glyphicon-pencil" data-toggle="tooltip" title="Edit"></i></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+          <!-- Edit Modal HTML -->
+            <div id="editEmployeeModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form>
+                            <div class="modal-header">						
+                                <h4 class="modal-title">Edit Product</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body">					
+                                <div class="form-group">
+                                    <label>Product ID</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Product NAME</label>
+                                    <input type="email" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="filebutton">Main_image</label>
+                                    <div class="col-md-4">
+                                      <input id="filebutton" name="filebutton" class="input-file" type="file">
+                                    </div>
+                                  </div>
+                                
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                <input type="submit" class="btn btn-info" value="Save">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+                                    <!-- Delete Modal HTML -->
+                                    <div id="deleteEmployeeModal" class="modal fade">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <form>
+                                                    <div class="modal-header">						
+                                                        <h4 class="modal-title">Delete Employee</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    </div>
+                                                    <div class="modal-body">					
+                                                        <p>Are you sure you want to delete these Records?</p>
+                                                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                                        <input type="submit" class="btn btn-danger" value="Delete">
+                                                    </div>
+                                </tbody>                        
+                            </table>
+                            <!-- <p class='lead'><em>No records were found.</em></p> -->
+                        </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+</div>
+</div>
+</form>
+</body>
+</html>

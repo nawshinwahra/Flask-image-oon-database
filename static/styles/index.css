@@ -1,0 +1,39 @@
+.login-form{
+    text-align:left;
+    padding:0px; 
+    text-transform: none;
+    right: 0;
+    left:-18px;
+    margin: 0; 
+    top: 50px;
+    width: 300px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border:1px solid #b2b2b2;
+}
+
+.login-header{
+    padding: 14px 20px;
+    background: #fafafa;
+}
+label { margin-bottom: 7px; font-weight: 700; }
+label em { color: #f1152f; font-weight: 400; font-style: normal; margin-left: 3px; }
+label[for="customer_email"] {
+    padding-top: 15px;
+}
+select,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] { padding: 9px 10px; line-height: 1.35; height: auto; border: 1px solid #cbcbcb; }

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Zingo Store</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery/min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>  
+
+        <!--jQuery library--> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!--Latest compiled and minified JavaScript--> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="{{url_for('static', filename='styles/all.css')}}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="#">Zingo Store</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a></li>
+                        <li><a href="/admin/product-view"><span class="glyphicon glyphicon-user"></span> Update Product </a></li>
+                        <li><a href="logout.html"><span class="glyphicon glyphicon-log-in"></span> Logout </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>  
+        <form class="form-horizontal" action="/admin" method="POST">
+            <fieldset>
+            
+            <!-- Form Name -->
+            <legend>PRODUCTS</legend>
+            
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="product_id">PRODUCT ID</label>  
+              <div class="col-md-4">
+              <input id="product_id" name="product_id" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text">
+                
+              </div>
+            </div>
+            
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="product_name">PRODUCT NAME</label>  
+              <div class="col-md-4">
+              <input id="product_name" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
+                
+              </div>
+            </div>
+            
+            
+            
+            <!-- Select Basic -->
+            <!-- <div class="form-group">
+              <label class="col-md-4 control-label" for="product_categorie">PRODUCT CATEGORY</label>
+              <div class="col-md-4">
+                <select id="product_categorie" name="product_categorie" class="form-control">
+                </select>
+              </div>
+            </div>
+             -->
+            <!-- Text input-->
+            <!-- <div class="form-group">
+              <label class="col-md-4 control-label" for="available_quantity">AVAILABLE QUANTITY</label>  
+              <div class="col-md-4">
+              <input id="available_quantity" name="available_quantity" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" type="text">
+                
+              </div>
+            </div>
+             -->
+            <!-- Text input-->
+            <!-- <div class="form-group">
+              <label class="col-md-4 control-label" for="product_weight">PRODUCT WEIGHT</label>  
+              <div class="col-md-4">
+              <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="form-control input-md" required="" type="text">
+                
+              </div>
+            </div>
+       -->
+            <!-- Text input-->
+            <!-- <div class="form-group">
+              <label class="col-md-4 control-label" for="percentage_discount">PERCENTAGE DISCOUNT</label>  
+              <div class="col-md-4">
+              <input id="percentage_discount" name="percentage_discount" placeholder="PERCENTAGE DISCOUNT" class="form-control input-md" required="" type="text">
+                
+              </div>
+            </div>
+       -->
+            <!-- Text input-->
+            <!-- <div class="form-group">
+              <label class="col-md-4 control-label" for="author">AUTHOR</label>  
+              <div class="col-md-4">
+              <input id="author" name="author" placeholder="AUTHOR" class="form-control input-md" required="" type="text">
+                
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="comment">PRODUCT DESCRIPTION</label>  
+              <div class="col-md-4">
+              <input id="comment" name="comment" placeholder="COMMENT" class="form-control input-md" required="" type="text">
+                
+              </div>
+            </div>
+             -->
+            
+             <!-- File Button --> 
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="filebutton">Main_image</label>
+              <div class="col-md-4">
+                <input id="filebutton" name="filebutton" class="input-file" type="file">
+              </div>
+            </div>
+            <!-- File Button --> 
+            <!-- <div class="form-group">
+              <label class="col-md-4 control-label" for="filebutton">auxiliary_images</label>
+              <div class="col-md-4">
+                <input id="filebutton" name="filebutton" class="input-file" type="file">
+              </div>
+            </div>
+             -->
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
+              <div class="col-md-4">
+                <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
+              </div>
+              </div>
+            
+            </fieldset>
+            </form>
+                        
+                  
+                </div>
+            </div>
+          </div> 
+        
+               <div class="footer" style="margin-top: 24%;width: 120%;">
+    <div class="container">
+        <center>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</center>
+    </div>
+    </div>     
+    </body>
+</html>
